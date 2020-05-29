@@ -1,0 +1,23 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity rede is
+
+	generic(	bx		: natural								:= 4;
+				bxw	: natural								:= 14;
+				w1		: std_logic_vector(9 downto 0)	:= "0110011101";
+				w2		: std_logic_vector(9 downto 0)	:= "1010110101";
+				t		: std_logic_vector(7 downto 0)	:= "01101010";
+				apaga	: std_logic_vector(0 to 6)			:= "1111111";
+				p		: std_logic_vector(0 to 6)			:= "0011000";
+				igual	: std_logic_vector(0 to 6)			:= "1110110"
+	);
+
+	port	(	x1,x2												: in	std_logic_vector(bx downto 0);
+				disp1,disp2,disp3,disp4						: out	std_logic_vector(0 to 6);
+				y													: buffer std_logic
+	);
+
+end rede;

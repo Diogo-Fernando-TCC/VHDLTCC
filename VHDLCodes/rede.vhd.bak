@@ -1,0 +1,35 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+architecture arch of rede is
+
+component decoder is
+
+	port	(	int			: in natural range 0 to  13;
+				display		: out std_logic_vector(6 downto 0));
+
+end component;
+
+signal xw1, xw2, soma	: std_logic_vector((bxw) downto 0);
+signal dig					: natural range 0 to 13;
+
+begin
+
+	decode : decoder port map (dig,disp1);
+
+	dig <= conv_integer(y);
+	disp4 <= apaga;
+	disp3 <= P;
+	disp2 <= igual;
+
+	xw1 <= w1*x1;
+	xw2 <= w2*x2;
+
+	soma <= xw1 - t;
+
+	y <= 	'0' when soma < 	xw2 else
+			'1' when soma >= 	xw2;	
+
+end arch;

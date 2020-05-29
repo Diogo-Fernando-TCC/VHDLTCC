@@ -1,0 +1,28 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity registrador is
+
+	port( d0, d1, d2, d3, d4, clk : in std_logic;
+			q0, q1, q2, q3, q4		: out std_logic;
+	);
+	
+end registrador;
+
+architecture behv of registrador is
+
+component flipflop is
+	port ( ent : in std_logic;
+			 clk : in std_logic;
+			 sai : out std_logic);
+end component;
+
+begin
+
+ent0: flipflop port map (d0,clk,q0);
+ent1: flipflop port map (d1,clk,q1);
+ent2: flipflop port map (d2,clk,q2);
+ent3: flipflop port map (d3,clk,q3);
+ent4: flipflop port map (d4,clk,q4);
